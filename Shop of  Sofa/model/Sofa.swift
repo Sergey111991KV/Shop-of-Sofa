@@ -8,4 +8,5 @@
 
 struct Sofa {
     var name: String
+    var category: Category
 }
