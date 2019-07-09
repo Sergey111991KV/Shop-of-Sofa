@@ -6,37 +6,62 @@
 //  Copyright © 2019 Сергей Косилов. All rights reserved.
 //
 
+var arraySofaForTable = [Sofa]()
+
+
+
 import UIKit
+
+
+var allSofa = arraySofaForTable.separationOnGroup()
+
+
 
 class AllSofaTableView: UITableViewController {
 
+ 
+  
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       print( allSofa.count)
+        print(allSofa)
     }
 
  
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 0
+       
+       
+        return allSofa.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
-        return 0
+        return allSofa[section].count
     }
 
-    /*
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellOfAllSofa", for: indexPath) as! CellOfAllSofa
+        let sofa = allSofa[indexPath.section][indexPath.row]
+        cell.nameOfSofa.text = sofa.name
+        cell.imageOfSofa.image = UIImage(named: sofa.image.first!)
         return cell
     }
-    */
-
+  
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Header"
+        label.backgroundColor = UIColor.blue
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -88,8 +113,9 @@ class AllSofaTableView: UITableViewController {
 
 extension Array where Element == Sofa{
     
-    func separationOnGroup(array: [Sofa]) -> [[Sofa]]{
-        
+   func separationOnGroup() -> [[Sofa]]{
+   
+        let array = Sofa.all
         var allSofa = [[Sofa]]()
         var cornerFabric = [Sofa]()
         var cornerLeather = [Sofa]()

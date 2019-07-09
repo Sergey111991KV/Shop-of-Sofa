@@ -15,6 +15,8 @@
 		1CC89CF822D4A73C00E8B033 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CF722D4A73C00E8B033 /* WelcomViewController.swift */; };
 		1CC89CFA22D4A7C800E8B033 /* AllSofaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CF922D4A7C800E8B033 /* AllSofaTableView.swift */; };
 		1CC89CFC22D4A93700E8B033 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CFB22D4A93700E8B033 /* category.swift */; };
+		1CC89D0022D4B7EA00E8B033 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CFF22D4B7EA00E8B033 /* SceneView.swift */; };
+		1CC89D0222D4C80D00E8B033 /* CellOfAllSofa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89D0122D4C80D00E8B033 /* CellOfAllSofa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1CC89CF722D4A73C00E8B033 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		1CC89CF922D4A7C800E8B033 /* AllSofaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSofaTableView.swift; sourceTree = "<group>"; };
 		1CC89CFB22D4A93700E8B033 /* category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
+		1CC89CFF22D4B7EA00E8B033 /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
+		1CC89D0122D4C80D00E8B033 /* CellOfAllSofa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOfAllSofa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				1CC89CE422D49E8900E8B033 /* Info.plist */,
+				1CC89D0522D4C8DB00E8B033 /* view */,
 				1CC89CEC22D4A5CD00E8B033 /* model */,
 				1CC89CEF22D4A63600E8B033 /* App */,
 				1CC89CEE22D4A61000E8B033 /* Controllers */,
@@ -90,6 +95,7 @@
 		1CC89CEE22D4A61000E8B033 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1CC89CFF22D4B7EA00E8B033 /* SceneView.swift */,
 				1CC89CF922D4A7C800E8B033 /* AllSofaTableView.swift */,
 				1CC89CF722D4A73C00E8B033 /* WelcomViewController.swift */,
 			);
@@ -111,6 +117,14 @@
 				1CC89CDC22D49E8800E8B033 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1CC89D0522D4C8DB00E8B033 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89D0122D4C80D00E8B033 /* CellOfAllSofa.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,11 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC89D0222D4C80D00E8B033 /* CellOfAllSofa.swift in Sources */,
 				1CC89CFA22D4A7C800E8B033 /* AllSofaTableView.swift in Sources */,
 				1CC89CFC22D4A93700E8B033 /* category.swift in Sources */,
 				1CC89CEB22D4A58400E8B033 /* Sofa.swift in Sources */,
 				1CC89CD922D49E8800E8B033 /* AppDelegate.swift in Sources */,
 				1CC89CF822D4A73C00E8B033 /* WelcomViewController.swift in Sources */,
+				1CC89D0022D4B7EA00E8B033 /* SceneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
