@@ -12,6 +12,7 @@
 		1CC89CDE22D49E8800E8B033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89CDC22D49E8800E8B033 /* Main.storyboard */; };
 		1CC89CE022D49E8900E8B033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89CDF22D49E8900E8B033 /* Assets.xcassets */; };
 		1CC89CE322D49E8900E8B033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89CE122D49E8900E8B033 /* LaunchScreen.storyboard */; };
+		1CC89CEB22D4A58400E8B033 /* Sofa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CEA22D4A58400E8B033 /* Sofa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1CC89CDF22D49E8900E8B033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CC89CE222D49E8900E8B033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CC89CE422D49E8900E8B033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CC89CEA22D4A58400E8B033 /* Sofa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sofa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,55 @@
 		1CC89CD722D49E8800E8B033 /* Shop of  Sofa */ = {
 			isa = PBXGroup;
 			children = (
-				1CC89CD822D49E8800E8B033 /* AppDelegate.swift */,
-				1CC89CDA22D49E8800E8B033 /* ViewController.swift */,
-				1CC89CDC22D49E8800E8B033 /* Main.storyboard */,
-				1CC89CDF22D49E8900E8B033 /* Assets.xcassets */,
-				1CC89CE122D49E8900E8B033 /* LaunchScreen.storyboard */,
 				1CC89CE422D49E8900E8B033 /* Info.plist */,
+				1CC89CEC22D4A5CD00E8B033 /* model */,
+				1CC89CEF22D4A63600E8B033 /* App */,
+				1CC89CEE22D4A61000E8B033 /* Controllers */,
+				1CC89CED22D4A5FC00E8B033 /* Resourse */,
+				1CC89CF022D4A65A00E8B033 /* Storyboard */,
 			);
 			path = "Shop of  Sofa";
+			sourceTree = "<group>";
+		};
+		1CC89CEC22D4A5CD00E8B033 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89CEA22D4A58400E8B033 /* Sofa.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		1CC89CED22D4A5FC00E8B033 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89CDF22D49E8900E8B033 /* Assets.xcassets */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		1CC89CEE22D4A61000E8B033 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89CDA22D49E8800E8B033 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1CC89CEF22D4A63600E8B033 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89CD822D49E8800E8B033 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1CC89CF022D4A65A00E8B033 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89CE122D49E8900E8B033 /* LaunchScreen.storyboard */,
+				1CC89CDC22D49E8800E8B033 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC89CEB22D4A58400E8B033 /* Sofa.swift in Sources */,
 				1CC89CDB22D49E8800E8B033 /* ViewController.swift in Sources */,
 				1CC89CD922D49E8800E8B033 /* AppDelegate.swift in Sources */,
 			);
