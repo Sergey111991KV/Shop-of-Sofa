@@ -7,7 +7,7 @@
 //
 
 
-enum Category {
+enum Category: String {
     
     case straightLeather
     case straightFabric

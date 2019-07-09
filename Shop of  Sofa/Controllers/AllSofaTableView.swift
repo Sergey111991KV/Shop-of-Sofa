@@ -6,116 +6,133 @@
 //  Copyright © 2019 Сергей Косилов. All rights reserved.
 //
 
-var arraySofaForTable = [Sofa]()
+
 
 
 
 import UIKit
 
 
-var allSofa = arraySofaForTable.separationOnGroup()
-
-
-
 class AllSofaTableView: UITableViewController {
 
- 
-  
+   var arraySofaForTable = [[Sofa]]()
+    
+    var allSofa: [Sofa]!
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       print( allSofa.count)
-        print(allSofa)
+        allSofa = Sofa.all
+        arraySofaForTable = allSofa.separationOnGroup()
+        print(allSofa.count)
+        print(arraySofaForTable.count)
     }
 
  
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-       
-       
-        return allSofa.count
+
+
+        return arraySofaForTable.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
-        return allSofa[section].count
+
+        return arraySofaForTable[section].count
     }
 
-   
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellOfAllSofa", for: indexPath) as! CellOfAllSofa
-        let sofa = allSofa[indexPath.section][indexPath.row]
+        let sofa = arraySofaForTable[indexPath.section][indexPath.row]
         cell.nameOfSofa.text = sofa.name
         cell.imageOfSofa.image = UIImage(named: sofa.image.first!)
+        cell.nameOfCollection.text = sofa.category.rawValue
         return cell
     }
-  
+
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.text = "Header"
-        label.backgroundColor = UIColor.blue
-        return label
+       let button = UIButton(type: .system)
+        button.setTitle("Закрыть", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = .blue
+        button.addTarget(self, action: #selector(handleExplandClose), for: .touchUpInside)
+        
+        
+        return button
     }
     
+    @objc func handleExplandClose(){
+        
+        let section = 0
+        var indexPaths = [IndexPath]()
+        for row in arraySofaForTable[section].indices{
+            let indexPath = IndexPath(row: row, section: section)
+            indexPaths.append(indexPath)
+        }
+        tableView.deleteRows(at: indexPaths, with: .fade)
+        
+        
+        
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 34
+    }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 
-
+//
+//extension Array where Element == Sofa{
+//
+//    func separationOnGroup() -> [[Sofa]]{
+//
+//
+//        var allSofa = [[Sofa]]()
+//        var cornerFabric = [Sofa]()
+//        var cornerLeather = [Sofa]()
+//        var cornerModular = [Sofa]()
+//        var straightFabric = [Sofa]()
+//        var straightLeather = [Sofa]()
+//
+//
+//        for sofa in self{
+//        if sofa.category == Category.cornerFabric {
+//            cornerFabric.append(sofa)} else{
+//            if sofa.category == Category.cornerLeather{
+//                cornerLeather.append(sofa)
+//            }else{
+//        if sofa.category == Category.cornerModular{
+//            cornerModular.append(sofa)}else{
+//            if sofa.category == Category.straightFabric{
+//                straightFabric.append(sofa)} else{
+//                if sofa.category == Category.straightLeather{
+//            straightLeather.append(sofa)
+//                }}}}}}
+//        allSofa.append(cornerModular)
+//        allSofa.append(cornerLeather)
+//        allSofa.append(cornerFabric)
+//        allSofa.append(straightFabric)
+//        allSofa.append(straightLeather)
+//
+//
+//        return allSofa
+//
+//}
+//
+//}
 extension Array where Element == Sofa{
     
-   func separationOnGroup() -> [[Sofa]]{
-   
-        let array = Sofa.all
+    func separationOnGroup() -> [[Sofa]]{
+        
+        
         var allSofa = [[Sofa]]()
         var cornerFabric = [Sofa]()
         var cornerLeather = [Sofa]()
@@ -123,28 +140,37 @@ extension Array where Element == Sofa{
         var straightFabric = [Sofa]()
         var straightLeather = [Sofa]()
         
-        
-        for sofa in array{
+        for sofa in self{
         switch sofa.category {
         case .cornerFabric:
             cornerFabric.append(sofa)
-        case .cornerLeather:
-            cornerLeather.append(sofa)
-        case .cornerModular:
-            cornerModular.append(sofa)
-        case .straightFabric:
-            straightFabric.append(sofa)
+            break
         case .straightLeather:
             straightLeather.append(sofa)
+            break
+        case .straightFabric:
+            straightFabric.append(sofa)
+            break
+        case .cornerModular:
+            cornerModular.append(sofa)
+            break
+        case .cornerLeather:
+            cornerLeather.append(sofa)
+            break
+            }
         }
+            
+            
+     
         allSofa.append(cornerModular)
         allSofa.append(cornerLeather)
         allSofa.append(cornerFabric)
         allSofa.append(straightFabric)
         allSofa.append(straightLeather)
-        }
-            
+        
+        
         return allSofa
+        
+    }
     
-}
 }
