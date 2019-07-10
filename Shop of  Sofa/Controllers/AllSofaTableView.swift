@@ -76,7 +76,9 @@ class AllSofaTableView: UITableViewController {
         }
         
         let isExplanded = arraySofaForTable[section].isExplanded
+        
         arraySofaForTable[section].isExplanded = !isExplanded
+        button.setTitle(isExplanded ? "Open": "Close", for: .normal)
         if isExplanded {
            tableView.deleteRows(at: indexPaths, with: .fade)
         }else{
