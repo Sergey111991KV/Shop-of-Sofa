@@ -15,7 +15,7 @@ import UIKit
 
 class AllSofaTableView: UITableViewController {
 
-   var arraySofaForTable = [[Sofa]]()
+   var arraySofaForTable = [ExplandableNames]()
     
     var allSofa: [Sofa]!
    
@@ -38,13 +38,17 @@ class AllSofaTableView: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return arraySofaForTable[section].count
+        if !arraySofaForTable[section].isExplanded {
+            return 0
+        }
+        
+        return arraySofaForTable[section].name.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellOfAllSofa", for: indexPath) as! CellOfAllSofa
-        let sofa = arraySofaForTable[indexPath.section][indexPath.row]
+        let sofa = arraySofaForTable[indexPath.section].name[indexPath.row]
         cell.nameOfSofa.text = sofa.name
         cell.imageOfSofa.image = UIImage(named: sofa.image.first!)
         cell.nameOfCollection.text = sofa.category.rawValue
@@ -57,20 +61,31 @@ class AllSofaTableView: UITableViewController {
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = .blue
         button.addTarget(self, action: #selector(handleExplandClose), for: .touchUpInside)
-        
+        button.tag = section
         
         return button
     }
     
-    @objc func handleExplandClose(){
+    @objc func handleExplandClose(button: UIButton){
         
-        let section = 0
+        let section = button.tag
         var indexPaths = [IndexPath]()
-        for row in arraySofaForTable[section].indices{
+        for row in arraySofaForTable[section].name.indices{
             let indexPath = IndexPath(row: row, section: section)
             indexPaths.append(indexPath)
         }
-        tableView.deleteRows(at: indexPaths, with: .fade)
+        
+        let isExplanded = arraySofaForTable[section].isExplanded
+        arraySofaForTable[section].isExplanded = !isExplanded
+        if isExplanded {
+           tableView.deleteRows(at: indexPaths, with: .fade)
+        }else{
+            tableView.insertRows(at: indexPaths, with: .fade)
+           
+        }
+        
+ 
+     
         
         
         
@@ -130,40 +145,45 @@ class AllSofaTableView: UITableViewController {
 //}
 extension Array where Element == Sofa{
     
-    func separationOnGroup() -> [[Sofa]]{
+    func separationOnGroup() -> [ExplandableNames]{
         
         
-        var allSofa = [[Sofa]]()
-        var cornerFabric = [Sofa]()
-        var cornerLeather = [Sofa]()
-        var cornerModular = [Sofa]()
-        var straightFabric = [Sofa]()
-        var straightLeather = [Sofa]()
+        var allSofa = [ExplandableNames]()
+        var cornerFabric = ExplandableNames(isExplanded: true, name: [])
+        var cornerLeather = ExplandableNames(isExplanded: true, name: [])
+        var cornerModular = ExplandableNames(isExplanded: true, name: [])
+        var straightFabric = ExplandableNames(isExplanded: true, name: [])
+        var straightLeather = ExplandableNames(isExplanded: true, name: [])
         
         for sofa in self{
         switch sofa.category {
         case .cornerFabric:
-            cornerFabric.append(sofa)
+            cornerFabric.name.append(sofa)
+            cornerFabric.isExplanded = true
             break
         case .straightLeather:
-            straightLeather.append(sofa)
+            straightLeather.name.append(sofa)
+            straightLeather.isExplanded = true
             break
         case .straightFabric:
-            straightFabric.append(sofa)
+            straightFabric.name.append(sofa)
+            straightFabric.isExplanded = true
             break
         case .cornerModular:
-            cornerModular.append(sofa)
+            cornerModular.name.append(sofa)
+            cornerModular.isExplanded = true
             break
         case .cornerLeather:
-            cornerLeather.append(sofa)
+            cornerLeather.name.append(sofa)
+            cornerLeather.isExplanded = true
             break
             }
         }
             
             
      
-        allSofa.append(cornerModular)
-        allSofa.append(cornerLeather)
+        allSofa.append(cornerModular )
+        allSofa.append(cornerLeather )
         allSofa.append(cornerFabric)
         allSofa.append(straightFabric)
         allSofa.append(straightLeather)
