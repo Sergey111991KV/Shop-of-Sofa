@@ -22,6 +22,8 @@ class AllSofaTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Все Диваны"
+        navigationController?.navigationBar.prefersLargeTitles = true
         allSofa = Sofa.all
         arraySofaForTable = allSofa.separationOnGroup()
         print(allSofa.count)
