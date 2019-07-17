@@ -720,6 +720,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KBT-NH-nws"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollDetailController" destination="gNl-QQ-aS9" id="n3B-R5-Yh5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eB-BX-HmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -784,10 +787,10 @@
             </objects>
             <point key="canvasLocation" x="1618.840579710145" y="120.53571428571428"/>
         </scene>
-        <!--Images View Controller-->
+        <!--Image Detail View Controller-->
         <scene sceneID="cYM-Wj-CBW">
             <objects>
-                <viewController id="Pb3-Ag-59b" customClass="ImagesViewController" sceneMemberID="viewController">
+                <viewController id="Pb3-Ag-59b" customClass="ImageDetailViewController" customModule="Shop_of__Sofa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Spn-bq-QrJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -796,7 +799,7 @@
                                 <rect key="frame" x="-10" y="0.0" width="340" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-mw-u1Z">
-                                        <rect key="frame" x="10" y="0.0" width="1680" height="200"/>
+                                        <rect key="frame" x="10" y="0.0" width="1340" height="200"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" берг1" translatesAutoresizingMaskIntoConstraints="NO" id="hzU-wm-k1o">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
@@ -810,21 +813,21 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="берг2" translatesAutoresizingMaskIntoConstraints="NO" id="9rL-z8-CVO">
                                                 <rect key="frame" x="1020" y="0.0" width="320" height="200"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laik" translatesAutoresizingMaskIntoConstraints="NO" id="gTW-Fd-GEB">
-                                                <rect key="frame" x="1360" y="0.0" width="320" height="200"/>
-                                            </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="hU8-mw-u1Z" secondAttribute="trailing" constant="-10" id="ULz-P9-Eni"/>
+                                    <constraint firstAttribute="trailing" secondItem="hU8-mw-u1Z" secondAttribute="trailing" constant="20" id="ULz-P9-Eni"/>
                                     <constraint firstAttribute="bottom" secondItem="hU8-mw-u1Z" secondAttribute="bottom" id="VoU-aU-aVa"/>
                                     <constraint firstItem="hU8-mw-u1Z" firstAttribute="top" secondItem="MmI-0n-AXJ" secondAttribute="top" id="boS-cP-nV5"/>
                                     <constraint firstItem="hU8-mw-u1Z" firstAttribute="leading" secondItem="MmI-0n-AXJ" secondAttribute="leading" constant="10" id="dKi-ep-hRm"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Pb3-Ag-59b" id="TYu-fo-6Pm"/>
+                                </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="kun-35-gcb">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="kun-35-gcb">
                                 <rect key="frame" x="16" y="163" width="288" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.94108229875564575" green="0.039610393345355988" blue="0.25064578652381897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -842,12 +845,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="kun-35-gcb" secondAttribute="trailing" id="wjM-sc-pKs"/>
                             <constraint firstAttribute="trailing" secondItem="MmI-0n-AXJ" secondAttribute="trailing" constant="-10" id="wpm-KE-fRU"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kFb-3U-Hiu"/>
                     </view>
                     <connections>
-                        <outlet property="pageControl" destination="kun-35-gcb" id="Lhr-rB-rri"/>
-                        <outlet property="scrollView" destination="MmI-0n-AXJ" id="xiO-22-myA"/>
-                        <outlet property="stackImage" destination="hU8-mw-u1Z" id="t8b-Uw-hdF"/>
-                        <outletCollection property="imageCollectionOfSofa" destination="9rL-z8-CVO" id="ZAG-yg-3fH"/>
+                        <outlet property="pageDetail" destination="kun-35-gcb" id="hDS-wa-2Jt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn4-VF-LZf" userLabel="First Responder" sceneMemberID="firstResponder"/>

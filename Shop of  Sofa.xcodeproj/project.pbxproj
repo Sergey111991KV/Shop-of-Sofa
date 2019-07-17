@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1C3462E922DCA3DF00AED154 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3462E822DCA3DF00AED154 /* GoogleService-Info.plist */; };
-		1C77803522DF914B00543DE5 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C77803422DF914B00543DE5 /* ImagesViewController.swift */; };
 		1CC89CD922D49E8800E8B033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CD822D49E8800E8B033 /* AppDelegate.swift */; };
 		1CC89CDE22D49E8800E8B033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89CDC22D49E8800E8B033 /* Main.storyboard */; };
 		1CC89CE022D49E8900E8B033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89CDF22D49E8900E8B033 /* Assets.xcassets */; };
@@ -20,6 +19,7 @@
 		1CC89D0022D4B7EA00E8B033 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89CFF22D4B7EA00E8B033 /* SceneView.swift */; };
 		1CC89D0222D4C80D00E8B033 /* CellOfAllSofa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89D0122D4C80D00E8B033 /* CellOfAllSofa.swift */; };
 		1CC89D0722D5115400E8B033 /* ExpandableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89D0622D5115400E8B033 /* ExpandableNames.swift */; };
+		1CCC146122DF9C5E003C43B4 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC146022DF9C5E003C43B4 /* ImageDetailViewController.swift */; };
 		1CD1219922D6D575000C24EC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1219822D6D575000C24EC /* AuthViewController.swift */; };
 		1CD1219B22D6D792000C24EC /* DetailOfSofaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1219A22D6D792000C24EC /* DetailOfSofaViewController.swift */; };
 		1CD1219D22D77B28000C24EC /* SceneKit Asset Catalog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD1219C22D77B28000C24EC /* SceneKit Asset Catalog.scnassets */; };
@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		1C3462E822DCA3DF00AED154 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1C77803422DF914B00543DE5 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		1CC89CD522D49E8800E8B033 /* Shop of  Sofa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shop of  Sofa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC89CD822D49E8800E8B033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CC89CDD22D49E8800E8B033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		1CC89CFF22D4B7EA00E8B033 /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
 		1CC89D0122D4C80D00E8B033 /* CellOfAllSofa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOfAllSofa.swift; sourceTree = "<group>"; };
 		1CC89D0622D5115400E8B033 /* ExpandableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableNames.swift; sourceTree = "<group>"; };
+		1CCC146022DF9C5E003C43B4 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		1CD1219822D6D575000C24EC /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		1CD1219A22D6D792000C24EC /* DetailOfSofaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfSofaViewController.swift; sourceTree = "<group>"; };
 		1CD1219C22D77B28000C24EC /* SceneKit Asset Catalog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = "SceneKit Asset Catalog.scnassets"; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				1CC89CFF22D4B7EA00E8B033 /* SceneView.swift */,
 				1CC89CF922D4A7C800E8B033 /* AllSofaTableView.swift */,
 				1CC89CF722D4A73C00E8B033 /* WelcomViewController.swift */,
-				1C77803422DF914B00543DE5 /* ImagesViewController.swift */,
+				1CCC146022DF9C5E003C43B4 /* ImageDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,8 +270,8 @@
 			files = (
 				1CC89D0722D5115400E8B033 /* ExpandableNames.swift in Sources */,
 				1CC89D0222D4C80D00E8B033 /* CellOfAllSofa.swift in Sources */,
+				1CCC146122DF9C5E003C43B4 /* ImageDetailViewController.swift in Sources */,
 				1CC89CFA22D4A7C800E8B033 /* AllSofaTableView.swift in Sources */,
-				1C77803522DF914B00543DE5 /* ImagesViewController.swift in Sources */,
 				1CC89CFC22D4A93700E8B033 /* category.swift in Sources */,
 				1CD1219B22D6D792000C24EC /* DetailOfSofaViewController.swift in Sources */,
 				1CC89CEB22D4A58400E8B033 /* Sofa.swift in Sources */,
